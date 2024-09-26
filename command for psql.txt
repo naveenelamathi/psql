@@ -1,0 +1,60 @@
+Microsoft Windows [Version 10.0.18362.30]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\ADMIN>cd/
+
+C:\>cd "C:\Program Files\PostgreSQL\14\bin"
+
+C:\Program Files\PostgreSQL\14\bin>psql -U your_username -d your_database
+Password for user your_username:
+psql: error: connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "your_username"
+
+C:\Program Files\PostgreSQL\14\bin>psql --version
+psql (PostgreSQL) 14.13
+
+C:\Program Files\PostgreSQL\14\bin>
+
+postgres: invalid argument: "=#"
+Try "postgres --help" for more information.
+
+C:\Program Files\PostgreSQL\14\bin>postgres=#
+postgres: invalid argument: "=#"
+Try "postgres --help" for more information.
+
+C:\Program Files\PostgreSQL\14\bin>pg_ctl -D "C:\Program Files\PostgreSQL\14\data" start
+pg_ctl: another server might be running; trying to start server anyway
+waiting for server to start....2024-09-25 15:10:27.842 IST [4600] LOG:  redirecting log output to logging collector process
+2024-09-25 15:10:27.842 IST [4600] HINT:  Future log output will appear in directory "log".
+ stopped waiting
+pg_ctl: could not start server
+Examine the log output.
+
+C:\Program Files\PostgreSQL\14\bin>psql -U your_username -d your_database
+Password for user your_username:
+psql: error: connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "your_username"
+
+C:\Program Files\PostgreSQL\14\bin>psql -U your_username
+Password for user your_username:
+psql: error: connection to server at "localhost" (::1), port 5432 failed: FATAL:  password authentication failed for user "your_username"
+
+C:\Program Files\PostgreSQL\14\bin>psql -U postgres
+Password for user postgres:
+psql (14.13, server 10.23)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \l
+                                       List of databases
+   Name    |  Owner   | Encoding |     Collate      |      Ctype       |   Access privileges
+-----------+----------+----------+------------------+------------------+-----------------------
+ postgres  | postgres | UTF8     | Hindi_India.1252 | Hindi_India.1252 |
+ template0 | postgres | UTF8     | Hindi_India.1252 | Hindi_India.1252 | =c/postgres          +
+           |          |          |                  |                  | postgres=CTc/postgres
+ template1 | postgres | UTF8     | Hindi_India.1252 | Hindi_India.1252 | =c/postgres          +
+           |          |          |                  |                  | postgres=CTc/postgres
+(3 rows)
+
+
+postgres=#
